@@ -1,7 +1,8 @@
 const mongoose = require('mongoose')
-var authUserAdminSchema = mongoose.Schema({
+
+var authUserAdminSchema = new mongoose.Schema({
     username: String,
     password: String
 })
-var authUserAdmin = mongoose.models('AuthUserAdmin', authUserAdminSchema, 'authUserAdmin')
+var authUserAdmin = mongoose.model('AuthUserAdmin', authUserAdminSchema, 'authUserAdmin')
 module.exports = authUserAdmin;
