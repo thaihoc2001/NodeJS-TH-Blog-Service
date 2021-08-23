@@ -4,7 +4,12 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const app = express();
 const server = require('http').createServer(app);
-const io = require('socket.io')(server, { origins: '*:*'});
+const io = require("socket.io")(server, {
+    cors: {
+        origin: "https://thaihocblog.xyz",
+        methods: ["GET", "POST"]
+    }
+});
 app.use(cors());
 app.use(express.json());
 app.use(express.static('public'));
