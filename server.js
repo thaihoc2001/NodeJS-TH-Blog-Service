@@ -5,9 +5,9 @@ const cors = require('cors');
 const app = express();
 const server = require('http').createServer(app);
 const io = require("socket.io")(server, {
-    cors: {
-        origin: "wss://thaihocblog.xyz/sockjs-node/538/0xo03v0m/websocket",
-        methods: ["GET", "POST"]
+    allowRequest: (req, callback) => {
+        const noOriginHeader = req.headers.origin === undefined;
+        callback(null, noOriginHeader);
     }
 });
 app.use(cors());
