@@ -3,13 +3,13 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const app = express();
-const server = require('http').createServer(app);
-const io = require("socket.io")(server, {
-    allowRequest: (req, callback) => {
-        const noOriginHeader = req.headers.origin === undefined;
-        callback(null, noOriginHeader);
-    }
-});
+// const server = require('http').createServer(app);
+// const io = require("socket.io")(server, {
+//     allowRequest: (req, callback) => {
+//         const noOriginHeader = req.headers.origin === undefined;
+//         callback(null, noOriginHeader);
+//     }
+// });
 app.use(cors());
 app.use(express.json());
 app.use(express.static('public'));
