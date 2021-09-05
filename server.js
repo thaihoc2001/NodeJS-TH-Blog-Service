@@ -17,7 +17,6 @@ app.ws('/', (ws, res)=> {
     })
 })
 
-
 const loginUser = require('./server/router/login.route');
 const confide = require('./server/router/confide.route');
 
