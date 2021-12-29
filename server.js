@@ -17,11 +17,11 @@ app.ws('/', (ws, res)=> {
     })
 })
 
-const loginUser = require('./server/router/login.route');
-const confide = require('./server/router/confide.route');
+const loginUser = require('./server/router/auth.route');
+const Messenger = require('./server/router/mesenger.route');
 
-app.use('/api/auth/login', loginUser);
-app.use('/confide', confide);
+app.use('/api/auth', loginUser);
+app.use('/messenger', Messenger);
 
 mongoose.connect(process.env.MONGO_URL_LOCAL,{
     useNewUrlParser: true,
